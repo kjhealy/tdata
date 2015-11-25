@@ -1,12 +1,7 @@
 library(ggplot2)
 
 ## Data courtesy C. DeSante, Oberlin
-t.data <- read.csv("data/tdata.csv", header = TRUE)
+td <- read.csv("https://raw.githubusercontent.com/kjhealy/tdata/master/data/tdata.csv")
 
-
-ggplot(data = t.data) +
-    geom_tile(aes(x = Happy,
-                  y = Thanksgiving,
-                  fill=t.colors, width=1)) +
-    scale_fill_identity() +
+ggplot(td) + geom_tile(aes(x=H, y=T, fill=tc, width=1)) + scale_fill_identity() +
     theme_bw()
